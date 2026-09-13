@@ -18,21 +18,35 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: www.pubgmobile.com
+      Host: ''
 - name: 🇭🇰 中国香港 (Hong Kong) 02 - xiaohe
   type: vless
-  server: 103.101.0.73
-  port: 443
-  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
+  server: 47.238.210.5
+  port: 13779
+  uuid: 928e6cce-8ced-4243-9a48-a6642edd09b0
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: vp10.pages.dev
+  reality-opts:
+    public-key: llTyp52oRXnJmQ3I9UUrmlwbMA79B-wLCRHCu-8dLGg
+  servername: tesla.com
+  client-fingerprint: chrome
+- name: 🇭🇰 中国香港 (Hong Kong) 03 - xiaohe
+  type: vmess
+  server: 93ucrn4i0pffuabk.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: 93ucrn4i0pffuabk.v.3dns.vip
   network: ws
   ws-opts:
-    path: /
+    path: /ws-vmess
     headers:
-      Host: vp10.pages.dev
+      Host: 93ucrn4i0pffuabk.v.3dns.vip
 proxy-groups:
 - name: PROXIES
   type: select
@@ -40,6 +54,7 @@ proxy-groups:
   - AUTO
   - 🇭🇰 中国香港 (Hong Kong) 01 - xiaohe
   - 🇭🇰 中国香港 (Hong Kong) 02 - xiaohe
+  - 🇭🇰 中国香港 (Hong Kong) 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -47,5 +62,6 @@ proxy-groups:
   proxies:
   - 🇭🇰 中国香港 (Hong Kong) 01 - xiaohe
   - 🇭🇰 中国香港 (Hong Kong) 02 - xiaohe
+  - 🇭🇰 中国香港 (Hong Kong) 03 - xiaohe
 rules:
 - MATCH,PROXIES
